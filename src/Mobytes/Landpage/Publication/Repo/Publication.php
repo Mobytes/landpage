@@ -1,5 +1,4 @@
 <?php
-
 /*
  *
  *  * Copyright (C) 2015 eveR Vásquez.
@@ -18,9 +17,12 @@
  *
  */
 
-namespace Mobytes\Landpage\Controllers;
+namespace Mobytes\Landpage\Publication\Repo;
 
-class MediaControllers extends BaseController
+
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
+class Publication extends Model
 {
-
+    use SoftDeletingTrait;
 }

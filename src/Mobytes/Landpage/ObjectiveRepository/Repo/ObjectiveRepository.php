@@ -1,5 +1,4 @@
 <?php
-
 /*
  *
  *  * Copyright (C) 2015 eveR Vásquez.
@@ -18,9 +17,10 @@
  *
  */
 
-namespace Mobytes\Landpage\Controllers;
+namespace Mobytes\Landpage\ObjectiveRepository\Repo;
 
-class MediaControllers extends BaseController
+
+class ObjectiveRepository
 {
 
 }

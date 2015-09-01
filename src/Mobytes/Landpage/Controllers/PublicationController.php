@@ -1,5 +1,4 @@
 <?php
-
 /*
  *
  *  * Copyright (C) 2015 eveR Vásquez.
@@ -20,7 +19,8 @@
 
 namespace Mobytes\Landpage\Controllers;
 
-class MediaControllers extends BaseController
+
+class PublicationController extends BaseController
 {
 
 }
