@@ -17,18 +17,18 @@
  *
  */
 
-namespace Mobytes\Landpage\Publication\Repo;
+namespace Mobytes\Landpage\Objective\Repo;
 
 
-class PublicationRepository implements PublicationInterface
+class ObjectiveRepository implements ObjectiveInterface
 {
     private $model;
 
     /**
-     * PublicationRepository constructor.
+     * Objective constructor.
      * @param $model
      */
-    public function __construct(Publication $model)
+    public function __construct(Objective $model)
     {
         $this->model = $model;
     }
@@ -44,29 +44,29 @@ class PublicationRepository implements PublicationInterface
     }
 
     /**
-     * @param $publication_id
+     * @param $objective_id
      * @param array $attributes
      * @return mixed
      */
-    public function update($publication_id, array $attributes)
+    public function update($objective_id, array $attributes)
     {
         // TODO: Implement update() method.
     }
 
     /**
-     * @param $publication_id
+     * @param $objective_id
      * @return mixed
      */
-    public function find($publication_id)
+    public function find($objective_id)
     {
         // TODO: Implement find() method.
     }
 
     /**
-     * @param $publication_id
+     * @param $objective_id
      * @return mixed
      */
-    public function destroy($publication_id)
+    public function destroy($objective_id)
     {
         // TODO: Implement destroy() method.
     }

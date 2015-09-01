@@ -17,10 +17,37 @@
  *
  */
 
-namespace Mobytes\Landpage\ObjectiveRepository\Repo;
+namespace Mobytes\Landpage\Objective\Repo;
 
 
+/**
+ * Interface ObjectiveInterface
+ * @package Mobytes\Landpage\Objective\Repo
+ */
 interface ObjectiveInterface
 {
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes);
 
+    /**
+     * @param $objective_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($objective_id,array $attributes);
+
+    /**
+     * @param $objective_id
+     * @return mixed
+     */
+    public function find($objective_id);
+
+    /**
+     * @param $objective_id
+     * @return mixed
+     */
+    public function destroy($objective_id);
 }

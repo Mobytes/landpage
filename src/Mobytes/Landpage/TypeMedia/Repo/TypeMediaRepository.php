@@ -20,7 +20,55 @@
 namespace Mobytes\Landpage\TypeMedia\Repo;
 
 
-class TypeMediaRepository
+class TypeMediaRepository implements TypeMediaInterface
 {
+    private $model;
+
+    /**
+     * TypeMediaRepository constructor.
+     * @param $model
+     */
+    public function __construct(TypeMedia $model)
+    {
+        $this->model = $model;
+    }
+
+
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes)
+    {
+        // TODO: Implement save() method.
+    }
+
+    /**
+     * @param $type_media_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($type_media_id, array $attributes)
+    {
+        // TODO: Implement update() method.
+    }
+
+    /**
+     * @param $type_media_id
+     * @return mixed
+     */
+    public function find($type_media_id)
+    {
+        // TODO: Implement find() method.
+    }
+
+    /**
+     * @param $type_media_id
+     * @return mixed
+     */
+    public function destroy($type_media_id)
+    {
+        // TODO: Implement destroy() method.
+    }
 
 }

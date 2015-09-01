@@ -20,7 +20,34 @@
 namespace Mobytes\Landpage\Media\Repo;
 
 
+/**
+ * Interface MediaInterface
+ * @package Mobytes\Landpage\Media\Repo
+ */
 interface MediaInterface
 {
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes);
 
+    /**
+     * @param $media_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($media_id,array $attributes);
+
+    /**
+     * @param $media_id
+     * @return mixed
+     */
+    public function find($media_id);
+
+    /**
+     * @param $media_id
+     * @return mixed
+     */
+    public function destroy($media_id);
 }

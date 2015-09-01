@@ -20,7 +20,34 @@
 namespace Mobytes\Landpage\Organization\Repo;
 
 
+/**
+ * Interface OrganizationInterface
+ * @package Mobytes\Landpage\Organization\Repo
+ */
 interface OrganizationInterface
 {
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes);
 
+    /**
+     * @param $organization_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($organization_id,array $attributes);
+
+    /**
+     * @param $organization_id
+     * @return mixed
+     */
+    public function find($organization_id);
+
+    /**
+     * @param $organization_id
+     * @return mixed
+     */
+    public function destroy($organization_id);
 }

@@ -20,7 +20,35 @@
 namespace Mobytes\Landpage\TypeMedia\Repo;
 
 
+/**
+ * Interface TypeMediaInterface
+ * @package Mobytes\Landpage\TypeMedia\Repo
+ */
 interface TypeMediaInterface
 {
 
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes);
+
+    /**
+     * @param $type_media_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($type_media_id,array $attributes);
+
+    /**
+     * @param $type_media_id
+     * @return mixed
+     */
+    public function find($type_media_id);
+
+    /**
+     * @param $type_media_id
+     * @return mixed
+     */
+    public function destroy($type_media_id);
 }

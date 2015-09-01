@@ -20,7 +20,34 @@
 namespace Mobytes\Landpage\Publication\Repo;
 
 
+/**
+ * Interface PublicationInterface
+ * @package Mobytes\Landpage\Publication\Repo
+ */
 interface PublicationInterface
 {
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes);
 
+    /**
+     * @param $publication_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($publication_id,array $attributes);
+
+    /**
+     * @param $publication_id
+     * @return mixed
+     */
+    public function find($publication_id);
+
+    /**
+     * @param $publication_id
+     * @return mixed
+     */
+    public function destroy($publication_id);
 }

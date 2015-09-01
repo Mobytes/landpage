@@ -20,7 +20,55 @@
 namespace Mobytes\Landpage\Organization\Repo;
 
 
-class OrganizationRepository
+class OrganizationRepository implements OrganizationInterface
 {
+    private $model;
+
+    /**
+     * OrganizationRepository constructor.
+     * @param $model
+     */
+    public function __construct(Organization $model)
+    {
+        $this->model = $model;
+    }
+
+
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes)
+    {
+        // TODO: Implement save() method.
+    }
+
+    /**
+     * @param $organization_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($organization_id, array $attributes)
+    {
+        // TODO: Implement update() method.
+    }
+
+    /**
+     * @param $organization_id
+     * @return mixed
+     */
+    public function find($organization_id)
+    {
+        // TODO: Implement find() method.
+    }
+
+    /**
+     * @param $organization_id
+     * @return mixed
+     */
+    public function destroy($organization_id)
+    {
+        // TODO: Implement destroy() method.
+    }
 
 }

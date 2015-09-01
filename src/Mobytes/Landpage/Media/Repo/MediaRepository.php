@@ -20,7 +20,59 @@
 namespace Mobytes\Landpage\Media\Repo;
 
 
-class MediaRepository
+class MediaRepository implements MediaInterface
 {
+    /**
+     * @autor eveR Vásquez
+     * @link http://evervasquez.me
+     * @var
+     */
+    private $model;
+
+    /**
+     * MediaRepository constructor.
+     * @param $model
+     */
+    public function __construct(Media $model)
+    {
+        $this->model = $model;
+    }
+
+    /**
+     * @param array $attributes
+     * @return mixed
+     */
+    public function save(array $attributes)
+    {
+        $this->model->create($attributes);
+    }
+
+    /**
+     * @param $media_id
+     * @param array $attributes
+     * @return mixed
+     */
+    public function update($media_id, array $attributes)
+    {
+        // TODO: Implement update() method.
+    }
+
+    /**
+     * @param $media_id
+     * @return mixed
+     */
+    public function find($media_id)
+    {
+        // TODO: Implement find() method.
+    }
+
+    /**
+     * @param $media_id
+     * @return mixed
+     */
+    public function destroy($media_id)
+    {
+        // TODO: Implement destroy() method.
+    }
 
 }

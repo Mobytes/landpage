@@ -17,7 +17,7 @@
  *
  */
 
-namespace Mobytes\Landpage\ObjectiveRepository\Repo;
+namespace Mobytes\Landpage\Objective\Repo;
 
 
 use Illuminate\Database\Eloquent\Model;
