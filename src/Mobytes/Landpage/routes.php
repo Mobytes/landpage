@@ -17,7 +17,7 @@
  *
  */
 
-Route::get('home', array(
+Route::get('/', array(
     'as'     => 'landpage.home',
     'uses'   => 'Mobytes\Landpage\Controllers\LandPageController@home'
 ));
