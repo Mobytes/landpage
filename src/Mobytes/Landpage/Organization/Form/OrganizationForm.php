@@ -17,14 +17,11 @@
  *
  */
 
-namespace Mobytes\Landpage\Media\Form;
+namespace Mobytes\Landpage\Organization\Form;
 
 
-use Laracasts\Validation\FormValidator;
-
-class MediaForm extends FormValidator
+class OrganizationForm
 {
-
     /**
      * rules the validation
      *
@@ -34,10 +31,11 @@ class MediaForm extends FormValidator
      */
 
     protected $rules = [
-        'publication_id' => 'required|integer|min:1',
-        'type_media_id' => 'required|integer|min:1',
-        'description' => 'required|alpha_num_spaces',
-        'url_media' => 'required|alpha_num_spaces',
-        'flag_main' => 'required|integer|min:1'
+        'nombre' => 'required|alpha_num_spaces|min:5',
+        'ruc' => 'required|alpha_num|min:11|max:12',
+        'direccion' => 'required|alpha_num_spaces',
+        'telefono' => 'required|alpha_num_spaces',
+        'vision' => 'required|alpha_num_spaces',
+        'mision' => 'required|alpha_num_spaces'
     ];
 }

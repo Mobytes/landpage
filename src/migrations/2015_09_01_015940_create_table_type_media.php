@@ -12,7 +12,7 @@ class CreateTableTypeMedia extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('type_media', function(Blueprint $table)
+        Schema::create('type_medias', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('description');
@@ -28,7 +28,7 @@ class CreateTableTypeMedia extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('type_media');
+		Schema::drop('type_medias');
 	}
 
 }

@@ -11,6 +11,8 @@ use Mobytes\Landpage\Publication\Repo\PublicationRepository;
 use Mobytes\Landpage\Publication\Repo\Publication;
 use Mobytes\Landpage\TypeMedia\Repo\TypeMediaRepository;
 use Mobytes\Landpage\TypeMedia\Repo\TypeMedia;
+use Mobytes\Landpage\TypePublication\Repo\TypePublicationRepository;
+use Mobytes\Landpage\TypePublication\Repo\TypePublication;
 
 class LandpageServiceProvider extends ServiceProvider
 {
@@ -45,6 +47,7 @@ class LandpageServiceProvider extends ServiceProvider
         $this->registerOrganization();
         $this->registerPublication();
         $this->registerTypeMedia();
+        $this->registerTypePublication();
     }
 
     public function registerMedia()
@@ -84,6 +87,14 @@ class LandpageServiceProvider extends ServiceProvider
         $app = $this->app;
         $app->bind('Mobytes\Landpage\TypeMedia\Repo\TypeMediaInterface', function ($app) {
             return new TypeMediaRepository(new TypeMedia());
+        });
+    }
+
+    public function registerTypePublication()
+    {
+        $app = $this->app;
+        $app->bind('Mobytes\Landpage\TypePublication\Repo\TypePublicationInterface', function ($app) {
+            return new TypePublicationRepository(new TypePublication());
         });
     }
 

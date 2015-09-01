@@ -17,27 +17,32 @@
  *
  */
 
-namespace Mobytes\Landpage\Media\Form;
+namespace Mobytes\Landpage\core;
 
 
-use Laracasts\Validation\FormValidator;
-
-class MediaForm extends FormValidator
+/**
+ * Class CommandBus
+ * @package Mychef\Core
+ */
+trait CommandBus
 {
 
     /**
-     * rules the validation
-     *
-     * @autor eveR Vásquez
-     * @link http://evervasquez.me
-     * @var array
+     * @param $command
+     * @return mixed
      */
+    public function execute($command)
+    {
+        return $this->getCommandBus()->execute($command);
+    }
 
-    protected $rules = [
-        'publication_id' => 'required|integer|min:1',
-        'type_media_id' => 'required|integer|min:1',
-        'description' => 'required|alpha_num_spaces',
-        'url_media' => 'required|alpha_num_spaces',
-        'flag_main' => 'required|integer|min:1'
-    ];
+    /**
+     * return commandBus laracast
+     *
+     * @return mixed
+     */
+    private function getCommandBus()
+    {
+        return \App::make('Laracasts\Commander\CommandBus');
+    }
 }

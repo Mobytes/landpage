@@ -17,27 +17,17 @@
  *
  */
 
-namespace Mobytes\Landpage\Media\Form;
+namespace Mobytes\Landpage\TypePublication\Repo;
 
 
-use Laracasts\Validation\FormValidator;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletingTrait;
 
-class MediaForm extends FormValidator
+class TypePublication extends Model
 {
+    protected $fillable = ['description'];
 
-    /**
-     * rules the validation
-     *
-     * @autor eveR Vásquez
-     * @link http://evervasquez.me
-     * @var array
-     */
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
-    protected $rules = [
-        'publication_id' => 'required|integer|min:1',
-        'type_media_id' => 'required|integer|min:1',
-        'description' => 'required|alpha_num_spaces',
-        'url_media' => 'required|alpha_num_spaces',
-        'flag_main' => 'required|integer|min:1'
-    ];
+    use SoftDeletingTrait;
 }

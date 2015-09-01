@@ -17,27 +17,38 @@
  *
  */
 
-namespace Mobytes\Landpage\Media\Form;
+namespace Mobytes\Landpage\Objective\Command;
 
 
-use Laracasts\Validation\FormValidator;
-
-class MediaForm extends FormValidator
+/**
+ * Class ObjectiveCommand
+ * @package Mobytes\Landpage\Objective\Command
+ */
+class ObjectiveCommand
 {
-
     /**
-     * rules the validation
-     *
      * @autor eveR Vásquez
      * @link http://evervasquez.me
-     * @var array
+     * @var
      */
+    public $organization_id;
 
-    protected $rules = [
-        'publication_id' => 'required|integer|min:1',
-        'type_media_id' => 'required|integer|min:1',
-        'description' => 'required|alpha_num_spaces',
-        'url_media' => 'required|alpha_num_spaces',
-        'flag_main' => 'required|integer|min:1'
-    ];
+    /**
+     * @autor eveR Vásquez
+     * @link http://evervasquez.me
+     * @var
+     */
+    public $description;
+
+    /**
+     * ObjectiveCommand constructor.
+     * @param $organization_id
+     * @param $description
+     */
+    public function __construct($organization_id, $description)
+    {
+        $this->organization_id = $organization_id;
+        $this->description = $description;
+    }
+
 }

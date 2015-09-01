@@ -12,13 +12,13 @@ class CreateTablePublication extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('publication', function(Blueprint $table)
+        Schema::create('publications', function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('type_publication_id')->unsigned();
             $table->string('titulo');
             $table->string('subtitulo');
-            $table->string('contenido');
+            $table->text('contenido');
             $table->string('tags');
             $table->string('url_file');
             $table->timestamps();
@@ -33,7 +33,7 @@ class CreateTablePublication extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('publication');
+		Schema::drop('publications');
 	}
 
 }

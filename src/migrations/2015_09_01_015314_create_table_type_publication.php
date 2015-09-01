@@ -12,7 +12,7 @@ class CreateTableTypePublication extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('type_publication', function(Blueprint $table)
+        Schema::create('type_publications', function(Blueprint $table)
         {
             $table->increments('id');
             $table->string('description');
@@ -28,7 +28,7 @@ class CreateTableTypePublication extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('type_publication');
+		Schema::drop('type_publications');
 	}
 
 }

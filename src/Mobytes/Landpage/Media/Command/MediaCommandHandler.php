@@ -17,27 +17,45 @@
  *
  */
 
-namespace Mobytes\Landpage\Media\Form;
+namespace Mobytes\Landpage\Media\Command;
 
 
-use Laracasts\Validation\FormValidator;
+use Laracasts\Commander\CommandHandler;
+use Mobytes\Landpage\Media\Repo\MediaInterface;
 
-class MediaForm extends FormValidator
+/**
+ * Class MediaCommandHandler
+ * @package Mobytes\Landpage\Media\Command
+ */
+class MediaCommandHandler implements  CommandHandler
 {
-
     /**
-     * rules the validation
-     *
      * @autor eveR Vásquez
      * @link http://evervasquez.me
-     * @var array
+     * @var
      */
+    private $repository;
 
-    protected $rules = [
-        'publication_id' => 'required|integer|min:1',
-        'type_media_id' => 'required|integer|min:1',
-        'description' => 'required|alpha_num_spaces',
-        'url_media' => 'required|alpha_num_spaces',
-        'flag_main' => 'required|integer|min:1'
-    ];
+    /**
+     * MediaCommandHandler constructor.
+     * @param $repository
+     */
+    public function __construct(MediaInterface $repository)
+    {
+        $this->repository = $repository;
+    }
+
+
+    /**
+     * Handle the command
+     *
+     * @param $command
+     * @return mixed
+     */
+    public function handle($command)
+    {
+        $attributes = (array) $command;
+        $this->repository->save($attributes);
+    }
+
 }

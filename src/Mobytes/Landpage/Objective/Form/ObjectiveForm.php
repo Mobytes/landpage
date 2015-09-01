@@ -17,14 +17,11 @@
  *
  */
 
-namespace Mobytes\Landpage\Media\Form;
+namespace Mobytes\Landpage\Objective\Form;
 
 
-use Laracasts\Validation\FormValidator;
-
-class MediaForm extends FormValidator
+class ObjectiveForm
 {
-
     /**
      * rules the validation
      *
@@ -34,10 +31,7 @@ class MediaForm extends FormValidator
      */
 
     protected $rules = [
-        'publication_id' => 'required|integer|min:1',
-        'type_media_id' => 'required|integer|min:1',
-        'description' => 'required|alpha_num_spaces',
-        'url_media' => 'required|alpha_num_spaces',
-        'flag_main' => 'required|integer|min:1'
+        'organization_id' => 'required|integer|min:1',
+        'description' => 'required|alpha_num_spaces'
     ];
 }

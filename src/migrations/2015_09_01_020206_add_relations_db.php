@@ -13,19 +13,19 @@ class AddRelationsDb extends Migration {
 	public function up()
 	{
         //publication
-        Schema::table('publication',function(Blueprint $table){
-            $table->foreign('type_publication_id')->references('id')->on('type_publication')->onDelete('cascade');
+        Schema::table('publications',function(Blueprint $table){
+            $table->foreign('type_publication_id')->references('id')->on('type_publications')->onDelete('cascade');
         });
 
         //media
-        Schema::table('media',function(Blueprint $table){
-            $table->foreign('publication_id')->references('id')->on('publication')->onDelete('cascade');
-            $table->foreign('type_media_id')->references('id')->on('type_media')->onDelete('cascade');
+        Schema::table('medias',function(Blueprint $table){
+            $table->foreign('publication_id')->references('id')->on('publications')->onDelete('cascade');
+            $table->foreign('type_media_id')->references('id')->on('type_medias')->onDelete('cascade');
         });
 
-        //objectives
+        //organization
         Schema::table('objectives',function(Blueprint $table){
-            $table->foreign('organization_id')->references('id')->on('organization')->onDelete('cascade');
+            $table->foreign('organization_id')->references('id')->on('organizations')->onDelete('cascade');
         });
     }
 
@@ -37,17 +37,17 @@ class AddRelationsDb extends Migration {
 	public function down()
 	{
         //publication
-        Schema::table('publication',function(Blueprint $table){
-            $table->dropForeign('publication_type_publication_id');
+        Schema::table('publications',function(Blueprint $table){
+            $table->dropForeign('publications_type_publication_id');
         });
 
         //media
-        Schema::table('media',function(Blueprint $table){
-            $table->dropForeign('media_publication_id');
-            $table->dropForeign('media_type_media_id');
+        Schema::table('medias',function(Blueprint $table){
+            $table->dropForeign('medias_publication_id');
+            $table->dropForeign('medias_type_media_id');
         });
 
-        //objectives
+        //organization
         Schema::table('objectives',function(Blueprint $table){
             $table->dropForeign('objectives_organization_id');
         });

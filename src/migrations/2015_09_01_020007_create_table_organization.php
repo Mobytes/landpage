@@ -12,12 +12,13 @@ class CreateTableOrganization extends Migration {
 	 */
 	public function up()
 	{
-        Schema::create('organization', function(Blueprint $table)
+        Schema::create('organizations', function(Blueprint $table)
         {
             $table->increments('id');
             $table->integer('nombre');
             $table->string('ruc');
             $table->string('direccion');
+            $table->string('telefono');
             $table->string('vision');
             $table->string('mision');
             $table->timestamps();
@@ -32,7 +33,7 @@ class CreateTableOrganization extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('organization');
+		Schema::drop('organizations');
 	}
 
 }
