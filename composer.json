@@ -1,0 +1,30 @@
+{
+    "name": "mobytes/landpage",
+    "description": "",
+    "authors": [
+        {
+            "name": "Mobytes S.A.C",
+            "email": "php@mobytescorp.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "laracasts/validation": "~1.0",
+        "laracasts/commander": "~1.0",
+        "laracasts/presenter": "0.1.*"
+    },
+    "require-dev": {
+      "fzaninotto/faker": "v1.3.0"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations",
+            "src/seeds"
+        ],
+        "psr-0": {
+            "Mobytes\\Landpage\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
