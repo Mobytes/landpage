@@ -34,6 +34,7 @@ class OrganizationForm extends FormValidator
     protected $rules = [
         'nombre' => 'required|alpha_num_spaces|min:5',
         'ruc' => 'required|alpha_num|min:11|max:12',
+        'email' => 'required|email',
         'direccion' => 'required',
         'telefono' => 'required|alpha_num_spaces',
         'vision' => 'required',
