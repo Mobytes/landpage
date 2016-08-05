@@ -24,7 +24,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletingTrait;
 class Organization extends Model
 {
-    protected $fillable = ['nombre', 'ruc', 'direccion', 'telefono', 'mision', 'vision', 'email'];
+    protected $fillable = ['nombre', 'ruc', 'direccion', 'telefono', 'mision', 'vision', 'email', 'address_two', 'us'];
 
     use SoftDeletingTrait;
 }
